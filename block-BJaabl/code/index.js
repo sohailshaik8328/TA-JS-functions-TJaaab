@@ -4,7 +4,7 @@
 function sayHello(name){
   alert(`Hello ${name}`)
 }
-sayHello("Sohail Shaik")
+// sayHello("Sohail Shaik")
 
 
 /*
@@ -17,11 +17,11 @@ Example:
 */
 
 function getFullName(firstName, lastName){
-  return firstName , lastName
+  return `${firstName}  ${lastName}`
 }
 
-getFullName("John", "Snow")
-getFullName("Nelson", "Mandela")
+// getFullName("John", "Snow")
+// getFullName("Nelson", "Mandela")
 /*
 3. Create a function named `addTwoNumbers` that accepts two numbers i.e `firstNum` and `secondNum` and returns
 the sum of both numbers. If user passes any data other then numbers alert a message saying `Enter Valid Input`
@@ -33,15 +33,16 @@ addTwoNumbers(10, "100"); // Alert Enter Valid Input
 */
 
 function addTwoNumbers(firstNum, secondNum){
-  return firstNum + secondNum
-  if(firstNum || secondNum !== Number){
+  if(typeof firstNum !== "number" || typeof secondNum !== "number"){
     alert("Enter valid input")
+  }else{
+    return firstNum + secondNum
   }
 }
 
-addTwoNumbers(10, 22)
-addTwoNumbers(20, 32)
-addTwoNumbers(10, "100")
+// addTwoNumbers(10, 22)
+// addTwoNumbers(20, 32)
+// addTwoNumbers(10, "100")
 
 /*
 4. Create a function named `calc` which accepts three parameter `numA`, `numB` and `operation`. Operation
@@ -56,14 +57,14 @@ calc(20, 10, 'mul'); // 200
 */
 
 function calc(numA, numB, operation){
-  if(operation == "add"){
+  if(typeof numA !== "number" || typeof numB !== "number"){
+    alert("Enter valid input")
+  }else if (operation == "add"){
     return numA + numB
   }else if (operation == "sub"){
     return numA - numB
-  }else if(operation == "mul"){
+  }else if (operation == "mul"){
     return numA * numB
-  }else if(numA || numB !== Number){
-    alert("Enter Valid Input")
   }
 }
 
@@ -94,7 +95,9 @@ function isLeapYear(year){
 */
 
 function getFactorial(factorial){
+  let factorial_num = 1;
   for(let i = factorial ; i >= 1 ; i--){
-   return  factorial += i
+     factorial_num *= i
   }
+  return factorial_num
 }
