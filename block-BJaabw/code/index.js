@@ -28,13 +28,9 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange(x, y, z) {
+function isInRange(lower, upper, num) {
   // Your code
-  if(x === 1 && y >= 20 && z < 20){
-    return true
-  }else{
-    return false
-  }
+  return num > lower && num < upper
   
 }
 // - Execute the function with required parameter
@@ -64,10 +60,12 @@ function calculateBMI(weight, height) {
     return `Underweight`
   }else if (bmi > 18.5 && bmi < 24.9 ){
     return `Normal Weight`
-  }else if (bmi > 25 && bmi <= 29.9){
+  }else if (bmi > 25 && bmi < 29.9){
     return `Overweight`
   }else if (bmi > 30){
     return `Obese`
+  }else{
+    alert("Enter valid")
   }
 }
 
@@ -92,6 +90,8 @@ function appropiateDrinks(age) {
     return `drink fruit-flavored beer`
   }else if (age > 21){
     return `drink throat-piercing vodka`
+  }else{
+    alert("Enter valid input")
   }
 }
 
@@ -108,9 +108,9 @@ Twist is when user passes anything other than number, or string value you should
 
 function sum(num1, num2) {
   // Your code
-  if(num1 == "number" && num2 == "number"){
+  if( typeof num1 == "number" && typeof num2 == "number"){
     return num1 + num2
-  }else if (num1 == "string" && num2 == "string"){
+  }else if (typeof num1 == "string" && typeof num2 == "string"){
     return num1 + " " + num2
   }else{
     alert("Enter valid values")
