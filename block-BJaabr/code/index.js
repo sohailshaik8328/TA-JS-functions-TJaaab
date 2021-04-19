@@ -261,6 +261,7 @@ let oddOrEven = function oddOrEven(odd_even_num){
 }
 
 // - Write an Arrow Function without curly brackets (hint: use ternary operator)
+let oddOrEven = (odd_even_num) => oddOrEven % 2 === 0 ? `Number is even` : `Number is odd`
 
 // - Write an Arrow Function with curly brackets
 let oddOrEven = (odd_even_num) => {
